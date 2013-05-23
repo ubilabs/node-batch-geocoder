@@ -1,0 +1,30 @@
+{
+  "name": "node-batch-geocoder",
+  "version": "0.0.0",
+  "description": "Node.js Batch Geocoder for the Google Maps API",
+  "main": "./lib/batch-geocoder",
+  "scripts": {
+    "test": "NODE_ENV=test vows test/*.js --spec"
+  },
+  "dependencies": {
+    "googlemaps": "*",
+    "fishbone": "*"
+  },
+  "devDependencies": {
+    "vows": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ubilabs/node-batch-geocoder.git"
+  },
+  "keywords": [
+    "google",
+    "maps",
+    "api",
+    "geocoder"
+  ],
+  "author": "Ubilabs",
+  "license": "BSD",
+  "readmeFilename": "README.md",
+  "gitHead": "d2d139453df2881443a369dfb7685a6d82fc1bd9"
+}
