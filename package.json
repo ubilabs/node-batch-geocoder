@@ -1,6 +1,6 @@
 {
-  "name": "node-batch-geocoder",
-  "version": "0.0.0",
+  "name": "batch-geocoder",
+  "version": "0.1.0",
   "description": "Node.js Batch Geocoder for the Google Maps API",
   "main": "./lib/batch-geocoder",
   "scripts": {
@@ -25,6 +25,5 @@
   ],
   "author": "Ubilabs",
   "license": "BSD",
-  "readmeFilename": "README.md",
-  "gitHead": "d2d139453df2881443a369dfb7685a6d82fc1bd9"
+  "readmeFilename": "README.md"
 }
