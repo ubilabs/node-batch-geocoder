@@ -72,6 +72,48 @@ vows.describe("geocode").addBatch({
 
   }
 }).addBatch({
+  "Geocode an address which is already in the cache": {
+    topic: function(){
+      var geocoder,
+        address = ["Juliusstraße 25, Hamburg, Germany"],
+        promise = new(events.EventEmitter);
+      geocoder = new Geocoder("./dbfile.cgg");
+      geocoder.on("finish", function (res) {
+        promise.emit("success", res);
+      });
+      geocoder.find(address);
+      return promise;
+    },
+    "Return value from geocoding is an object" : function(err, result) {
+      assert.isObject(result);
+    },
+    "Return value object contains the right address": function(err, result){
+      var location;
+      location = result["Juliusstraße 25, Hamburg, Germany"];
+      assert.isObject(location);
+    },
+    "Address has the right latitude": function(err, result){
+      var location;
+      location = result["Juliusstraße 25, Hamburg, Germany"];
+      assert.isNumber(location.lat);
+      assert.equal(location.lat, 53.5612782);
+    },
+    "Address has the right longitude": function(err, result){
+      var location;
+      location = result["Juliusstraße 25, Hamburg, Germany"];
+      assert.isNumber(location.lng);
+      assert.equal(location.lng, 9.9610992);
+    },
+    "Cache file contains only one address": function(err, result){
+      var fileContents = fs.readFileSync("./dbfile.cgg").toString();
+      assert.equal(fileContents.split("\n").length-1, 1);
+    },
+    "Cache file contains the right address": function(err, result){
+      var fileContents = fs.readFileSync("./dbfile.cgg").toString();
+      assert.equal(fileContents, "Juliusstraße 25, Hamburg, Germany;53.5612782;9.9610992\n");
+    }
+  }
+}).addBatch({
   "Geocode an address with a ' in it": {
     topic: function(){
       var geocoder,
