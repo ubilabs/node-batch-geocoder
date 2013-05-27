@@ -2,7 +2,7 @@ var vows = require("vows"),
   assert = require("assert"),
   events = require("events"),
   fs = require("fs"),
-  Geocoder = require("../lib/geocoder");
+  Geocoder = require("../lib/batch-geocoder");
 
 vows.describe("geocode").addBatch({
   "Do not create a geocoder instance if cache file is missing" : {

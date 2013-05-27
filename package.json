@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "googlemaps": "*",
-    "fishbone": "*"
+    "fishbone": "*",
+    "stagger": "*"
   },
   "devDependencies": {
     "vows": "*"
