@@ -1,6 +1,6 @@
 {
   "name": "batch-geocoder",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Node.js Batch Geocoder for the Google Maps API",
   "main": "./lib/batch-geocoder",
   "scripts": {
