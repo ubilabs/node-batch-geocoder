@@ -7,7 +7,7 @@
     "test": "NODE_ENV=test vows test/*.js --spec"
   },
   "dependencies": {
-    "googlemaps": "*",
+    "googlemaps": ">=0.1.9",
     "fishbone": "*",
     "stagger": "*"
   },
