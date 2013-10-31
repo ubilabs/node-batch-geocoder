@@ -10,6 +10,10 @@ geocoder.on("status", function(status){
   console.log(status);
 });
 
+geocoder.on("error", function(status){
+  console.log("Something went wrong", status);
+});
+
 for(i=0; i < 10; i++){
   addresses.push("Juliusstraße "+ i + ", Hamburg, Germany");
 }
