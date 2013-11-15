@@ -3,6 +3,8 @@ node-batch-geocoder
 
 Node.js Batch Geocoder for the Google Maps API
 
+[![Build Status](https://travis-ci.org/ubilabs/node-batch-geocoder.png?branch=master)](https://travis-ci.org/ubilabs/node-batch-geocoder)
+
 # Example
 
 ```js
