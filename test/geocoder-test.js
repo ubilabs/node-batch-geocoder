@@ -65,8 +65,9 @@ vows.describe("geocode").addBatch({
       assert.equal(location.lng, lng);
     },
     "Cache file contains only one address": function(err, result){
-      var fileContents = fs.readFileSync("./dbfile.cgg").toString();
-      assert.equal(fileContents.split("\n").length-1, 1);
+      var fileContents = fs.readFileSync("./dbfile.cgg").toString(),
+        fileSize = fileContents.split("\n").length - 1;
+      assert.equal(fileSize, 1);
     },
     "Cache file contains the right address": function(err, result){
       var fileContents = fs.readFileSync("./dbfile.cgg").toString();
@@ -163,8 +164,9 @@ vows.describe("geocode").addBatch({
       assert.isUndefined(location);
     },
     "Cache file contains only one line": function(err, result){
-      var fileContents = fs.readFileSync("./dbfile.cgg").toString();
-      assert.equal(fileContents.split("\n").length-1, 1);
+      var fileContents = fs.readFileSync("./dbfile.cgg").toString(),
+        fileSize = fileContents.split("\n").length - 1;
+      assert.equal(fileSize, 1);
     },
     "Cache file contains the right data": function(err, result){
       var fileContents = fs.readFileSync("./dbfile.cgg").toString();
