@@ -65,11 +65,6 @@ vows.describe('geocode').addBatch({
       assert.isNumber(location.lng);
       assert.equal(location.lng, lng);
     },
-    'Cache file contains only one address': function() {
-      var fileContents = fs.readFileSync('./dbfile.cgg').toString(),
-        fileSize = fileContents.split('\n').length - 1;
-      assert.equal(fileSize, 1);
-    },
     'Cache file contains the right address': function() {
       var fileContents = fs.readFileSync('./dbfile.cgg').toString();
       assert.equal(fileContents, 'Juliusstraße 25, Hamburg, Germany;' + lat + ';' + lng + '\n');
@@ -163,11 +158,6 @@ vows.describe('geocode').addBatch({
       var location;
       location = result['xdfagsf, asdf adsf a,a sdfa dsf'];
       assert.isUndefined(location);
-    },
-    'Cache file contains only one line': function() {
-      var fileContents = fs.readFileSync('./dbfile.cgg').toString(),
-        fileSize = fileContents.split('\n').length - 1;
-      assert.equal(fileSize, 1);
     },
     'Cache file contains the right data': function() {
       var fileContents = fs.readFileSync('./dbfile.cgg').toString();
