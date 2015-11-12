@@ -228,14 +228,3 @@ vows.describe('geocode').addBatch({
     }
   }
 }).export(module);
-/*.addBatch({
-  'Remove File after tests are done': {
-    topic: function() {
-      fs.unlinkSync('./dbfile.cgg');
-      return fs.existsSync('./dbfile.cgg');
-    },
-    'No File exists': function(topic) {
-      assert.isFalse(topic);
-    }
-  }
-})*/
