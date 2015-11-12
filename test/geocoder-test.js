@@ -5,17 +5,26 @@ var vows = require('vows'),
   fs = require('fs'),
   Geocoder = require('../lib/batch-geocoder'),
   home = 'Juliusstraße 25, Hamburg, Germany',
-  lat = 53.56099,
-  lng = 9.9614;
+  lat = 53.5610739,
+  lng = 9.961291899999999;
+
+if (fs.existsSync('./dbfile.cgg')) {
+  fs.unlinkSync('./dbfile.cgg');
+}
 
 vows.describe('geocode').addBatch({
   'Do not create a geocoder instance if cache file is missing' : {
     topic: function() {
-      return new Geocoder();
+      try {
+        new Geocoder();
+      } catch (error) {
+        return error;
+      }
     },
-    'Geocoder object is not created because cache file is missing': function(topic) {
-      assert.equal(topic.message, 'path must be a string');
-    }
+    'Geocoder object is not created because cache file is missing':
+      function(topic) {
+        assert.equal(topic.message, 'path must be a string');
+      }
   },
   'Create a geocoder instance if a valid parameter is submitted' : {
     topic: function() {
@@ -218,7 +227,8 @@ vows.describe('geocode').addBatch({
       }
     }
   }
-}).addBatch({
+}).export(module);
+/*.addBatch({
   'Remove File after tests are done': {
     topic: function() {
       fs.unlinkSync('./dbfile.cgg');
@@ -228,4 +238,4 @@ vows.describe('geocode').addBatch({
       assert.isFalse(topic);
     }
   }
-}).export(module);
+})*/
