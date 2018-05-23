@@ -27,6 +27,3 @@ geocoder.find([
   ...
 ]);
 ```
-
-
-[![Analytics](https://ga-beacon.appspot.com/UA-57649-14/your-repo/node-batch-geocoder)](https://github.com/igrigorik/ga-beacon)
